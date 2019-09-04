@@ -1,0 +1,496 @@
+$txt-color: #ff7f00;
+$bg-color: #f7f7f7;
+
+input[type="text"],
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; // 去除safari浏览器的内阴影
+  &::-webkit-input-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &:-moz-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &::-moz-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &:-ms-input-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input, textarea, select {
+  background-color: transparent;
+  font-family: '微软雅黑';
+}
+
+select {
+  border: none;
+}
+
+option {
+  text-indent: 1em;
+  font-family: '微软雅黑';
+}
+
+input[type='text'] {
+  border: none;
+  text-indent: 1em;
+}
+
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%in-b {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+}
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+}
+}
+
+.wrap {
+  width: 750px;
+  margin: 0 auto;
+}
+
+/* 标题模板 */
+.title-module{
+  font-size: 22px;
+  font-weight: bold;
+  height: 42px;
+  line-height: 42px;
+  color: #444444;
+  text-align: center;
+  border-bottom: 2px solid #eeeeee;
+  box-sizing: border-box;
+  span{
+    @extend %in-b;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 2px solid #ff7f00;
+    box-sizing: border-box;
+
+  }
+  .icon{
+    @extend %in-b;
+    width: 14px;
+    height: 13px;
+
+  }
+
+  .left-icon{
+    background: url("../images/title-left_1.png") no-repeat;
+    margin-right: 10px;
+  }
+  .right-icon{
+    background: url("../images/title-right_1.png") no-repeat;
+    margin-left: 10px;
+  }
+}
+
+/* 按钮模板 */
+.btn-module{
+  padding-top: 10px;
+  a{
+    @extend %in-b;
+    width: 103px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    //.icon{
+    //  @extend %in-b;
+    //  width: 14px;
+    //  height: 13px;
+    //  background: url("../images/icon_1.png") no-repeat bottom;
+    //  margin-right: 2px;
+    //}
+    &:first-child{
+      background-image: linear-gradient(-22deg,
+          #ff7f00 0%,
+          #ff9865 100%);
+      margin-right: 12px;
+    }
+    &:nth-of-type(2){
+      background-image: linear-gradient(-22deg,
+          #266ed1 0%,
+          #518ee2 100%);
+    }
+    &.has-before{
+      position: relative;
+      padding-left: 33px;
+      text-align: left;
+      box-sizing: border-box;
+      &:before{
+        @extend %in-b;
+        content: '';
+        width: 14px;
+        height: 13px;
+        background: url("../images/icon_1.png") no-repeat;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 17px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* 招生简章 */
+.recruit{
+  /* 课程 */
+  .courses{
+    li{
+      @extend %clearfix;
+      padding-top: 28px;
+      margin-bottom: 7px;
+    }
+    .course-bg{
+      float: left;
+      margin-right: 23px;
+    }
+    .detail{
+      float: left;
+      width: 482px;
+      .detail-title{
+        @extend %in-b;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        color: #444444;
+        margin-bottom: 10px;
+        &:hover{
+          color: $txt-color;
+        }
+      }
+      .text{
+        font-size: 14px;
+        line-height: 24px;
+        color: #666666;
+
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+      }
+    }
+  }
+  /* 学校 */
+  .schools{
+    padding-top: 45px;
+    margin-bottom: 30px;
+    ul{
+      @extend %clearfix;
+      margin-right: -18px;
+    }
+    li{
+      float: left;
+      width: 240px;
+      //height: 243px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      border: solid 1px #e6e6e6;
+      padding-bottom: 19px;
+      box-sizing: border-box;
+      text-align: center;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      .school-bg{
+        height: 70px;
+        position: relative;
+        img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      .school-title{
+        height: 31px;
+        line-height: 30px;
+        background-color: #89b1e9;
+        font-size: 16px;
+        color: #ffffff;
+      }
+      .detail{
+        padding: 10px 15px 0;
+        p{
+          text-align: left;
+          font-size: 14px;
+          line-height: 24px;
+          color: #444444;
+        }
+      }
+      .btn-module{
+        a{
+          &:nth-of-type(2){
+            background-image: none;
+            span{
+              color: $txt-color;
+              border-bottom: 1px solid $txt-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 热门机构推荐 */
+.hot-organs{
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 72px;
+  .title-module{
+    border-bottom: 0;
+    margin-bottom: 20px;
+    span{
+      border-bottom: 0;
+    }
+    .icon{
+      width: 79px;
+      height: 15px;
+    }
+    .left-icon{
+      background: url("../images/title-left_2.png") no-repeat;
+    }
+    .right-icon{
+      background: url("../images/title-right_2.png") no-repeat;
+    }
+  }
+  .organ{
+    //width: 708px;
+    height: 284px;
+    background-color: #ffffff;
+    border-radius: 9px;
+    padding: 4px 0 6px;
+    box-sizing: border-box;
+    margin-bottom: 19px;
+    .organ-l{
+      float: left;
+      width: 194px;
+      height: 100%;
+      padding-top: 14px;
+      border-right: 4px solid #f7f7f7;
+      box-sizing: border-box;
+      text-align: center;
+      .promote{
+        margin-left: -7px;
+        margin-bottom: 24px;
+      }
+      .l-title{
+        font-size: 20px;
+        line-height: 21px;
+        color: #444444;
+      }
+      .praise{
+        padding-top: 32px;
+        .icon{
+          @extend %in-b;
+          width: 16px;
+          height: 17px;
+          background: url("../images/icon_3.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        p{
+          font-size: 14px;
+          line-height: 21px;
+          color: #999999;
+        }
+      }
+    }
+    .organ-r{
+      float: left;
+      width: 510px;
+      padding-top: 20px;
+      padding-left: 18px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      .r-feature{
+        text-align: left;
+        span{
+          @extend %in-b;
+          width: 100px;
+          height: 33px;
+          line-height: 33px;
+          background-color: #ffffff;
+          border-radius: 15px;
+          border: solid 1px #ff7f00;
+          font-size: 16px;
+          color: #ff7f00;
+          margin-right: 12px;
+          text-align: center;
+        }
+
+      }
+      .detail{
+        li{
+          font-size: 14px;
+          line-height: 21px;
+          color: #666666;
+          text-align: left;
+          padding-top: 22px;
+          @extend %clearfix;
+          &:before{
+            @extend %in-b;
+            content: '';
+            width: 7px;
+            height: 7px;
+            border: solid 2px #ff7f00;
+            box-sizing: border-box;
+            border-radius: 100%;
+            margin-right: 6px;
+            float: left;
+            margin-top: 8px;
+          }
+          span{
+            @extend %in-b;
+            float: left;
+            width: 458px;
+          }
+        }
+      }
+      .btn-module{
+        text-align: left;
+        a{
+          box-shadow: inset 0px 8px 21px 6px
+          rgba(255, 244, 229, 0.35);
+          background-image: none;
+          background-color: #f7f7f7;
+          color: $txt-color;
+          .icon{
+            width: 13px;
+            height: 14px;
+            margin-right: 5px;
+          }
+          span{
+            border-bottom: 1px solid $txt-color;
+          }
+          &:first-child{
+            width: 125px;
+            &:before{
+              left: 12px;
+              background: url("../images/icon_4.png") no-repeat;
+            }
+          }
+          &:nth-of-type(2){
+            &:before{
+              left: 15px;
+              background: url("../images/icon_5.png") no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+  .organ-btn{
+    @extend %in-b;
+    width: 208px;
+    height: 44px;
+    line-height: 44px;
+    background-image: linear-gradient(-22deg,
+    #ff7f00 0%,
+    #ff9865 100%);
+    box-shadow: 0px 2px 8px 0px
+    rgba(255, 127, 0, 0.3);
+    border-radius: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    padding-left: 63px;
+    box-sizing: border-box;
+    text-align: left;
+    &:before{
+      @extend %in-b;
+      content: '';
+      width: 16px;
+      height: 15px;
+      background: url("../images/icon_6.png") no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 42px;
+      margin: auto;
+    }
+  }
+}
+
+/* 预约看校 */
+.appoint{
+  height: 102px;
+  background-color: #ffffff;
+  border: solid 1px #e6e6e6;
+  padding: 18px 26px 19px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+  @extend %clearfix;
+  .appoint-school{
+    border-right: 1px dashed #808080;
+    float: left;
+    padding-right: 24px;
+    margin-right: 28px;
+  }
+  .detail{
+    .detail-title{
+      font-size: 20px;
+      line-height: 30px;
+      color: #333333;
+    }
+    p{
+      font-size: 14px;
+      line-height: 30px;
+      color: #777777;
+    }
+  }
+  .appoint-btn{
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 114px;
+    height: 32px;
+    line-height: 32px;
+    background-image: linear-gradient(-22deg,
+    #ff7f00 0%,
+    #ff9865 100%);
+    border-radius: 14px 0px 0px 14px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
